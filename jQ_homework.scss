@@ -1,0 +1,388 @@
+@import "vendor/reset";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+
+$main-color: #929525;
+$main-color-darken: darken($main-color,10%);
+$sec-color: #6D6E69;
+
+*{
+    // outline: 1px solid red !important;
+    font-family: 'Noto Sans TC', sans-serif;
+ } 
+ // 公用
+ a{
+    text-decoration: none;
+ }
+ .container{
+   max-width: 1000px;
+   padding: 0 20px;
+   margin: auto;
+ }
+ .clearfix{
+   clear: both;
+ }
+ h2{
+   font-size: 25px;
+   font-weight: bold;
+   text-align: center;
+   color: $main-color-darken;
+ }
+ h3{
+  margin: 40px 0 20px;
+  font-size: 20px;
+  text-align: center;
+  color: $main-color;
+}
+ p{
+   font-size: 16px;
+   line-height: 1.5;
+   text-align: justify;
+   text-justify:inter-ideograph;
+   color: #333;
+ }
+ 
+ //nav
+ nav{
+   box-shadow: 0px 0px 5px rgb(158, 157, 157);
+   position: relative;
+   z-index: 2;
+ }
+ 
+ //social
+ .social{
+   background-color:$sec-color;
+   .social__mediaGroups{
+     float: right;
+     /* 由外層推 */
+     .social__media{
+       width: 100px;
+       text-align: center;
+       padding: 10px 5px;
+       float: left;
+       /* 為了去中間的空格 */
+       /* float 自帶inline-block屬性 */
+       i{
+         margin-right: 5px;
+         vertical-align: bottom;
+       }
+     }
+     .social__mediaFb{
+         color: #3060A4;
+       }
+     .social__mediaTw{
+         color: #02ACEF;
+       }
+   }
+ }
+ 
+ //navbar
+ .nav{
+   padding: 10px 20px;
+   display: flex;
+   flex-direction:row;
+   flex-wrap: nowrap;
+   flex-flow: row nowrap;
+   justify-content: space-between;
+   .logo a{
+     display: inline-block;
+     background-image: url("https://www.tak-da.com/images/%E4%B8%8A%E7%A0%94%E8%BE%A6%E5%85%AC%E5%AE%A4%E8%A8%AD%E8%A8%88logo-2.png");
+     width: 170px;
+     height: 36px;
+     text-indent: 102%;
+     white-space: nowrap;
+     overflow: hidden;
+     vertical-align: bottom;
+     background-size: cover;
+   }
+   .nav__list li{
+     display: inline-block;
+     a{
+       display: inline-block;
+       width: 100%;
+       padding: 10px 10px;
+       text-align: center;
+       color: $main-color;
+       &:hover{
+         color:darken($main-color,10%);
+       }
+     }
+   }
+ }
+
+ //banner
+ .banner{
+   padding: 20px 0 30px;
+   background-color: #eee;
+   .banner-1{
+     width: 100%;
+     height: 500px;
+     background-image: url(../img/house/de1.jpeg);
+   }
+   .banner-2{
+    width: 100%;
+    height: 500px;
+    background-image: url(../img/house/de2.jpeg);
+   }
+   .banner-3{
+    width: 100%;
+    height: 500px;
+    background-image: url(../img/house/de3.jpeg);
+   }
+ }
+
+ //skill
+ .skill{
+   padding-top: 50px;
+   ul{
+     display: flex;
+     margin: 0 -10px;
+     li{
+       display: inline-block;
+       width: calc(33.3333% - 20px);
+       margin: 0px 10px;
+       padding: 20px;
+       border-radius: 5px;
+      //  box-shadow: 0px 3px 5px rgb(158, 157, 157);
+       &:hover{
+         box-shadow: 0px 3px 10px rgb(131, 130, 130);
+         transition: 0.5s
+       }
+     }
+   }
+   .skill__img{
+     text-align: center;
+   }
+ }
+ 
+//compare
+ .compare{
+   padding-top: 50px;
+   padding-bottom: 30px;
+   color: #333;
+   h2{
+     margin: 0px 0 30px;
+   }
+   table{
+      width: 100%;
+      text-align: center;
+     thead{
+       background-color: #ddd;
+     }
+     tr{
+       border-top:1px solid #999;
+     }
+     th,td{
+       padding: 10px;
+     }
+     .compare__color{
+       color: $main-color;
+     }
+
+   }
+ }
+
+ //contact
+ .contact{
+   background-color: #ECECEC;
+   padding-top: 50px;
+   padding-bottom: 50px;
+   h3{
+     font-weight: normal;
+     margin-top: 15px;
+     margin-bottom: 30px;
+   }
+   .contact__group{
+     display: flex;
+     .contact__map{
+      width: 50%;
+      padding-right: -20px;
+      margin-right: 20px;
+      height: 300px;
+      iframe{
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .contact__form{
+      position: relative;
+      margin-left: 20px;
+      width: 50%;
+      border: 1px solid $main-color;
+      padding: 20px;
+      .contact__formGroup{
+        display: flex;
+        margin-bottom: 10px;
+        label{
+          color: #333;
+          display: inline-block;
+          width: 50px;
+          height: 30px;
+          line-height: 30px;
+        }
+        input{
+          padding: 0 10px;
+          height: 30px;
+          width: calc(100% - 50px);
+        }
+      }
+      .contact__formGroup--radio{
+        margin-bottom: 10px;
+        display: flex;
+        label{
+          color: #333;
+          display: inline-block;
+          width: 150px;
+          height: 30px;
+          line-height: 30px;
+        }
+        .form__radiochoose{
+           display: flex;
+           width: calc(100% - 150%);
+         label{
+           width: 50px;
+         }
+         input{
+           height: 30px;
+           margin: 0 20px;
+         }
+        }
+      }
+      .contact__formBtn{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        .btn{
+          min-width: 80px;
+          height: 40px;
+          border-radius: 5px;
+        }
+        .btn--cancel {
+         border:1px solid $main-color !important;
+         color: $main-color;
+         margin-right: 5px;
+       }
+       .btn--confirm{
+         background-color: $main-color;
+         color: #fff;
+       }
+     }
+    }
+   }
+
+ }
+
+ //scrollTop
+.top{
+  position: fixed;
+  right:10px;
+  bottom:10px;
+  width: 50px;
+  height: 50px;
+  z-index: 3;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px #999;
+  text-align: center;
+  cursor: pointer;
+  a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    i{
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      font-size: 20px;
+      vertical-align: bottom;
+      color: $main-color-darken;
+      &::before{
+        vertical-align: sub;
+      }
+    }
+  }
+  &:hover{
+    box-shadow: 0px 0px 7px 0px #555;
+    i{
+      top:40%;
+      transition: 0.5s;
+    }
+  }
+}
+
+//footer
+footer{
+  padding: 20px;
+  background-color: #6D6E69;
+  p{
+    text-align: center;
+  }
+}
+
+//media
+@media(max-width:768px){
+  .container{
+    margin: 0 20px;
+  }
+  //banner
+  .banner-1,.banner-2,.banner-3{
+    background-position: center;
+  }
+  //nav
+  .nav{
+    display: block;
+    .logo{
+      text-align: center;
+      padding: 20px 0;
+    }
+    .nav__list{
+      display: flex;
+      flex-flow: row wrap;
+      li{
+        width: 50%;
+        text-align: center;
+        padding: 5px 0;
+      }
+    } 
+  }
+
+  //skill
+  .skill ul{
+    flex-flow: row wrap;
+    li{
+      margin: 40px 0;
+      width: 100%;
+    }
+    li:first-child{
+      margin: 0;
+      width: 100%;
+    }
+  }
+
+  //contact
+  .contact{
+    .contact__group{
+      display: flex;
+      flex-flow: row wrap;
+      .contact__map{
+        width: 100%;
+        padding-right: 0;
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+      .contact__form{
+        width: 100%;
+        height: 300px;
+        margin-left: 0;
+      }
+    }
+
+
+  }
+}
+
+//  套件修改
+.swiper-pagination-bullet-active{
+  background: $main-color;
+}
